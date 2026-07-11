@@ -1,0 +1,75 @@
+CSS media queries let you change your website’s design depending on the device or 
+screen size, making your site responsive and user-friendly. As a beginner, focus 
+on learning the basic syntax, common features like min-width and max-width, and how 
+to choose breakpoints for mobile-first design.
+
+🌐 What Are Media Queries?
+Definition: Media queries are CSS rules that apply styles only when certain conditions 
+(like screen width or orientation) are met.
+
+Purpose: They make websites adapt to different devices (phones, tablets, desktops).
+
+Introduced in CSS3: Supported by all major browsers since 2012.
+
+📖 Basic Syntax
+
+@media (condition) {
+  /* CSS rules here */
+}
+
+Media type (optional): screen, print, or all.
+Media features: Conditions like min-width, max-width, orientation.
+
+Example:
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+This changes the background color only when the screen width is 600px or less.
+
+📏 Common Media Features
+Width/Height: min-width, max-width (most used for responsive layouts).
+
+Orientation: portrait or landscape.
+
+Resolution: min-resolution: 300dpi.
+
+User preferences: prefers-color-scheme: dark, prefers-reduced-motion.
+
+🔑 Choosing Breakpoints
+Breakpoints are the screen widths where your design changes.
+
+Mobile-first approach: Start with styles for small screens, then add media queries for larger screens.
+
+Common breakpoints:
+
+480px → small phones
+
+768px → tablets
+
+1024px → small laptops
+
+1200px+ → desktops
+
+⚙️ Combining Conditions
+You can use logical operators:
+
+AND: @media (min-width: 768px) and (orientation: landscape)
+
+OR (comma): @media (max-width: 480px), (orientation: portrait)
+
+NOT: @media not all and (monochrome)
+
+✅ Beginner Tips
+Start simple: Use max-width queries to adjust layouts for phones.
+
+Test often: Resize your browser or use developer tools to preview.
+
+Avoid too many breakpoints: Stick to key device sizes.
+
+Use mobile-first design: Write default styles for mobile, then expand.
+
+Check accessibility: Use queries like prefers-reduced-motion for inclusive design.

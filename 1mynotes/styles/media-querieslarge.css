@@ -1,0 +1,25 @@
+@media (max-width: 600px) {
+  .nav-links {
+    display: none; /* hide links on small screens */
+  }
+
+  .navbar {
+    justify-content: center; /* center the logo */
+  }
+}
+
+/* UPDATE FOR THE ADDED BUTTON */
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: block; /* show button on mobile */
+  }
+  .nav-links {
+    display: none; /* hide links by default */
+    flex-direction: column;
+    background: #444;
+    padding: 10px;
+  }
+  .nav-links.show {
+    display: flex; /* show when toggled */
+  }
+}

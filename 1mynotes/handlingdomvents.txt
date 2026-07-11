@@ -1,0 +1,63 @@
+=========== What is an Event? =============
+
+An event is just something that happens on a webpage.
+Examples:
+
+A user clicks a button.
+A user presses a key.
+The page finishes loading.
+
+When these things happen, the browser can “fire” a signal. 
+JavaScript can listen for that signal and run some code in response.
+
+========= How Do We Handle events ===============
+We use the method:
+
+element.addEventListener('eventName', function() {
+  // code to run when event happens
+});
+
+element → the thing we’re watching (like a button).
+'eventName' → the type of event (like 'click').
+function() { ... } → the code that runs when the event happens. 
+This is called an event handler or callback function.
+
+================ Examples =======================
+
+===== 1. Click Event ======
+const button = document.querySelector('button');
+
+button.addEventListener('click', function() {
+  alert("Button was clicked!");
+});
+
+==> When you click the button, a message pops up: Button was clicked!
+
+===== 2. Keyup Event =====
+
+document.addEventListener('keyup', function() {
+  console.log("A key was released!");
+});
+
+==> When you release any key, it logs a message.
+
+3. DOMContentLoaded Event
+
+document.addEventListener("DOMContentLoaded", function() {
+  console.log("Page is fully loaded and ready!");
+});
+
+==> Runs code once the HTML is finished loading. Useful for starting your scripts safely.
+
+✅ Why This Matters
+Events make your page interactive. Without them, your page is static. With them, you can:
+
+Show/hide menus.
+Validate forms.
+React to user input.
+Build dynamic features like shopping lists or games.
+
+Think of events like doorbells:
+
+The browser rings the bell when something happens (click, key press, load).
+Your JavaScript is the person who hears the bell and decides what to do (run code).

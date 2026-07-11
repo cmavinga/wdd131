@@ -1,0 +1,67 @@
+=============== What is a Responsive Menu? ====================================
+
+A responsive menu is a navigation bar that changes depending on the screen size:
+
+On desktop: you see all the links across the top.
+On mobile: the links are hidden to save space, and you see a small “hamburger” button (≡).
+When you click the hamburger, the links slide open.
+
+This way, users get a familiar, easy-to-use menu whether they’re on a phone, tablet, or 
+computer.
+
+=== Why Use a Hamburger Menu? ===
+
+Saves space on small screens.
+Recognizable icon: most users know ≡ means “menu.”
+Keeps layout clean: avoids clutter.
+
+html
+<body>
+    <nav class="navbar">
+    <div class="logo">MySite</div>
+    <button class="menu-toggle">☰</button> /* THIS IS THE BUTTON */
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+    
+</body>
+
+css
+.menu-toggle {
+  display: none;
+  background-color: none;
+  border: none;
+  font-size: 24px;
+  color: black;
+}
+
+media queries
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: block; /* show button on mobile */
+  }
+  .nav-links {
+    display: none; /* hide links by default */
+    flex-direction: column;
+    background: #444;
+    padding: 10px;
+  }
+  .nav-links.show {
+    display: flex; /* show when toggled */
+  }
+}
+
+JavaScript
+// Select elements
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+// Add event listener (construct: event handling + function)
+menuToggle.addEventListener('click', function() {
+  // Toggle class (construct: if/else logic simplified)
+  navLinks.classList.toggle('show');
+});

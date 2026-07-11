@@ -1,0 +1,150 @@
+== DOM: Document Object Model ==
+Think of your webpage as a family tree:
+
+The root is <html>.
+Inside are children like <head> and <body>.
+Inside <body> are grandchildren like <article>, <p>, <div>.
+JavaScript lets you walk through this tree and change things: text, styles, attributes, 
+or even add/remove branches.
+========================================================================================
+
+===== Key DOM Actions =====
+
+== 1. Select an Element ==
+
+const article = document.querySelector('article');
+
+👉 This finds the first <article> tag in your page and saves it in a variable called article.
+Think of it like saying: “I want to work with this specific box.”
+
+== 2. Change the Content ==
+
+article.innerHTML = 'This is <strong>bold</strong> text!';
+
+👉 Replaces what’s inside <article>.
+
+innerHTML allows HTML tags.
+textContent would only show plain text.
+
+📝 innerHTML
+Meaning: Lets you insert text and HTML tags inside an element.
+The browser will interpret the tags and render them.
+
+For example:
+
+article.innerHTML = "This is <strong>bold</strong> text!";
+👉 The page will show: This is bold text!  (IN BOLD)
+Because <strong> is an HTML tag, the browser makes the word “bold” appear bold.
+
+📝 textContent
+Meaning: Inserts only plain text.
+Any HTML tags you write will be shown as text, not interpreted.
+
+For example:
+
+article.textContent = "This is <strong>bold</strong> text!";
+👉 The page will show: This is <strong>bold</strong> text!
+The tags are displayed literally, like normal characters, not as formatting.
+
+✅ Summary
+innerHTML → allows HTML tags, so the browser applies formatting.
+textContent → shows only plain text, no formatting.
+
+💡 Think of it like this:
+
+innerHTML = “I want the browser to understand my tags.”
+textContent = “I want the browser to show exactly what I typed, tags included.”
+
+== 3. Change the Style ==
+in js write:
+article.style.textAlign = 'right';
+
+👉 Directly changes the CSS style of the element.
+Now the text inside <article> is aligned to the right.
+
+== 4. Change Attributes ==
+javascript
+article.setAttribute('class', 'active');
+👉 Adds or changes the class attribute.
+
+Alternative:
+
+javascript
+article.classList.add('active');
+👉 Easier for adding/removing/toggling classes.
+
+article.classList.add('active'); EXPLANATION
+
+📝 What It Does
+article → is the variable holding your <article> element.
+
+.classList → is a special property that lets you work with the element’s CSS classes.
+
+.add('active') → adds the class name "active" to that element.
+
+So if your HTML was:
+
+html
+<article>Some text here</article>
+After running:
+
+javascript
+article.classList.add('active');
+It becomes:
+
+html
+<article class="active">Some text here</article>
+
+🎨 Why It Matters
+Once the class is added, your CSS can style it differently. For example:
+
+css
+.active {
+  background-color: yellow;
+  font-weight: bold;
+}
+Now the <article> will have a yellow background and bold text whenever 
+JavaScript adds the "active" class.
+
+== 5. Create a New Element ==
+
+const paragraph = document.createElement('p');
+paragraph.textContent = "Hello, I'm new!";
+
+👉 Makes a new <p> element in memory.
+It’s like building a new Lego block but not attaching it yet.
+
+== 6. Append (Attach) Content ==
+javascript
+article.appendChild(paragraph);
+
+👉 Attaches the new <p> inside <article>.
+Now it’s visible on the page.
+
+7. Remove Elements
+javascript
+article.removeChild(paragraph); // removes the <p>
+article.remove();               // removes the <article> itself
+👉 Deletes elements from the page.
+
+✅ Why This Matters
+These are the basic moves of DOM manipulation:
+
+Select → find an element.
+
+Change → edit text, style, or attributes.
+
+Create → make new elements.
+
+Append → add them to the page.
+
+Remove → delete them.
+
+With these, you can build interactive features like shopping lists, menus, or fo
+
+🔑 Key Point
+classList.add() = attach a new class.
+
+classList.remove() = take a class away.
+
+classList.toggle() = switch it on/off depending on whether it’s already there.
