@@ -1,0 +1,214 @@
+Week 03 WDD131 Notes
+=================================== Design Principles =================================================
+
+== 🖋 Typography (Fonts) ===
+
+•	Use only 2–3 fonts maximum.
+•	If you want variety, change the weight (like bold vs regular) instead of adding new fonts.
+•	Example: Roboto Regular (400) for body text, Roboto Bold (700) for headings.
+
+👉 Why? Too many fonts make a site look messy and hard to read.
+
+=== 🎨 Colors ===
+
+•	Pick a small palette (no more than 5 colors).
+•	Make sure text and background colors have good contrast (dark text on light background, or vice versa).
+•	Example: Blue for buttons, white background, black text.
+
+👉 Why? Colors set the mood and help people know what’s important.
+
+=== ✨ Clarity ===
+
+•	Keep things simple and clean.
+•	Use whitespace (empty space) so the page doesn’t feel crowded.
+•	Avoid long paragraphs — use short text and visuals.
+
+👉 Why? A cluttered page confuses users.
+
+=== 📏 Consistency ===
+
+•	Use the same fonts, colors, and layout style across all pages.
+•	Example: If your buttons are blue on one page, keep them blue everywhere.
+
+👉 Why? Consistency builds trust and makes navigation easier.
+
+=== 🔑 Visual Hierarchy ===
+
+•	Show what’s most important by making it bigger, bolder, or more colorful.
+•	Example: Headline → large bold text, Subheading → medium text, Body → small text.
+
+👉 Why? It guides the user’s eyes to the right place.
+
+=== ♿ Accessibility ===
+
+•	Make sure everyone can use your site, even people with disabilities.
+•	Add alt text for images, check color contrast, and allow keyboard navigation.
+•	Tools like WAVE or Lighthouse can test accessibility.
+
+👉 Why? Accessibility = inclusivity.
+
+=== 🔄 Feedback ===
+
+•	Give users a response when they click or type.
+•	Example: A button changes color when clicked, or a form shows “Submitted successfully.”
+
+👉 Why? Feedback reassures users that their action worked.
+
+=== 👥 User-Centric Design ===
+
+•	Always design for the user’s needs, not just what looks cool.
+•	Do research: What do they want? What problems do they face?
+
+👉 Why? A site that ignores users will fail, no matter how pretty it looks.
+
+=== 🌟 Visual Appeal ===
+
+•	Use high-quality images, nice fonts, and maybe simple animations.
+•	Don’t overdo it — balance beauty with usability.
+
+👉 Why? Attractive design keeps users engaged.
+
+=== ✅ Beginner Tip ===
+
+Think of your website like a room you’re decorating:
+•	Fonts = furniture style (keep it consistent).
+•	Colors = paint on the walls (choose a palette).
+•	Whitespace = empty space so the room doesn’t feel cramped.
+•	Visual hierarchy = deciding which items catch the eye first.
+
+================================ CSS Pseudo-Selectors =====================================
+ 
+====== 🎯 Pseudo Classes (element states) ======
+
+A pseudo class is like saying: “Style this element only when it’s in a certain situation.”
+Examples:
+•	:hover → when the mouse is over a button.
+•	:focus → when an input box is clicked and ready for typing.
+•	:visited → when a link has already been clicked.
+•	:not() → exclude certain elements.
+👉 They react to user actions or conditions.
+
+🎨 Pseudo Elements (parts of elements)
+A pseudo element is like saying: “Style a specific piece of this element.”
+
+Examples:
+•	::first-letter → style only the first letter of a paragraph.
+•	::first-line → style only the first line of text.
+•	::before → add content before an element.
+•	::after → add content after an element.
+
+👉 They target parts inside an element.
+
+🌱 The :root pseudo class
+•	:root usually points to the <html> element.
+•	It’s useful for CSS variables (custom properties).
+Example:
+css
+:root {
+  --main-color: #3498db;
+  --font-size: 16px;
+}
+
+button {
+  background-color: var(--main-color);
+  font-size: var(--font-size);
+}
+👉 Advantage: If you want to change your site’s main color, you only change it once in :root, 
+and it updates everywhere. This makes your CSS easier to maintain.
+
+✅ Check Your Understanding (from the CodePen example)
+In Nick Salloum’s “CSS Only Floated Labels,” you’ll see pseudo classes like:
+•	:root → for variables.
+•	:focus → when input is active.
+•	:placeholder-shown → when placeholder text is visible.
+•	:not() → to exclude certain states.
+
+🔧 Why this matters
+Without pseudo selectors, your site would feel static. With them:
+•	Buttons can change color when hovered.
+•	Forms can highlight when focused.
+•	Links can look different after being visited.
+•	You can style parts of text without extra HTML.
+They make your site interactive, dynamic, and user friendly.
+💡 Beginner tip: Try experimenting in CodePen with a simple button:
+css
+button {
+  background: lightblue;
+  border: none;
+  padding: 10px;
+}
+
+button:hover {
+  background: darkblue;
+  color: white;
+}
+👉 Hover over the button and watch it change — that’s a pseudo class in action!
+
+=========================================== WebP and SVG formats activity =============================================
+
+🖼 WebP Format
+•	What it is: A modern image format created by Google.
+•	Why it matters: It compresses images better than JPEG or PNG, meaning smaller file sizes but still good quality.
+•	Types of compression:
+o	Lossless: Keeps all original details (like PNG).
+o	Lossy: Shrinks the file more by approximating data (like JPEG).
+•	Extra features: Supports transparency (like PNG) and animation (like GIF).
+👉 Advantage: Faster page loads because images are lighter.
+📐 SVG Format (Scalable Vector Graphics)
+•	What it is: A format for images made of shapes and lines, not pixels.
+•	Why it matters: SVGs can scale up or down without losing quality. Perfect for logos, icons, and simple graphics.
+•	Extra features: You can style them with CSS or animate them.
+👉 Advantage: Crisp graphics at any size, very small file size for simple designs.
+⚖️ Comparison with Older Formats
+•	JPEG: Good for photos, but lossy and heavier.
+•	PNG: Good for transparency, but large file sizes.
+•	GIF: Good for simple animations, but outdated.
+•	WebP & SVG: Modern, smaller, faster, and increasingly supported by browsers.
+👉 MDN says: Older formats still work everywhere, but newer formats are becoming standard as old browsers fade away.
+🌱 Key Terms Simplified
+•	Lossless compression: Nothing is lost; file shrinks by removing repetition.
+•	Lossy compression: Some detail is lost, but file shrinks a lot.
+•	Transparency: Parts of the image let the background show through.
+✅ Beginner Tip
+Think of it like this:
+•	WebP = lightweight backpack → carries the same stuff but weighs less.
+•	SVG = elastic logo sticker → stretches to any size without getting blurry.
+Responsive Images
+🌍 Why Responsive Images Matter
+•	A desktop image might be 2000px wide. Sending that to a phone is overkill.
+•	Phones only need smaller images (maybe 400–600px wide).
+•	By serving the right size, the page loads faster and uses less data.
+👉 Rule of thumb: Create 3–5 versions of an image (small, medium, large, etc.).
+🧩 The picture Element
+The <picture> tag is like a container that holds multiple image options. Inside it:
+•	<source> → defines different images for different screen widths.
+•	<img> → the default image if none of the conditions match.
+Example:
+html
+<picture>
+  <source srcset="images/hero-large.webp" media="(min-width: 1000px)">
+  <source srcset="images/hero-medium.webp" media="(min-width: 550px)">
+  <img src="images/hero-small.webp" alt="Orem Utah Temple" width="400" height="200">
+</picture>
+🔎 How the Browser Decides
+1.	If the screen is 1000px or wider → show hero-large.webp.
+2.	If the screen is between 550px and 999px → show hero-medium.webp.
+3.	If the screen is smaller than 550px → show hero-small.webp.
+👉 The browser automatically picks the best match.
+🎨 Art Direction
+Sometimes you don’t just resize — you crop differently for small screens.
+•	Example: On desktop, show the full landscape photo.
+•	On mobile, crop closer to the subject so it’s clear even on a small screen.
+✅ Beginner Tip
+Think of responsive images like clothing sizes:
+•	Large shirt for adults (desktop).
+•	Medium shirt for teens (tablet).
+•	Small shirt for kids (phone).
+Everyone gets the size that fits them best.
+
+
+
+
+
+
+

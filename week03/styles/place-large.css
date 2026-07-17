@@ -1,0 +1,35 @@
+.hero {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Small screens (<500px) */
+@media screen and (max-width: 499px) {
+  .hero {
+    background-image: url("images/hero-gorilla-small.webp");
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  hero img, .data, .weather {
+    position: static;
+  }
+}
+
+/* Medium screens (500px–999px) */
+@media screen and (min-width: 500px) and (max-width: 999px) {
+  .hero {
+    background-image: url("images/hero-gorilla-medium.webp");
+  }
+}
+
+/* Large screens (≥1000px) */
+@media screen and (min-width: 1000px) {
+  .hero {
+    background-image: url("images/hero-gorilla-large.webp");
+  }
+}
