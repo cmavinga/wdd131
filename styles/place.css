@@ -1,3 +1,11 @@
+:root {
+  --primary-color: yellowgreen; 
+  --secondary-color: skyblue; 
+  --accent1-color: black; 
+  --accent2-color: rgba(255, 255, 255, 0.8); 
+  --accent3-color: yellow; 
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -5,8 +13,8 @@
 }
 
 h1 {
-    background-color: yellowgreen;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--accent1-color);
     font-weight: bold;
     font-size: 3rem;
     text-align: center;
@@ -14,7 +22,7 @@ h1 {
 }
 
 body {
-    background-color: skyblue;
+    background-color: var(--secondary-color);
 }
 
 .hero {
@@ -48,17 +56,17 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: skyblue;
+    background-color: var(--secondary-color);
 }
 
 h2 {
-    color: white;
+    color: var(--accent1-color);
     font-weight: bold;
 }
 
 section {
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--accent2-color);
 }
 
 dl {
@@ -81,12 +89,12 @@ main {
 }
 
 footer {
-    background-color: yellowgreen;
-    border: 1px solid yellow;
+    background-color: var(--primary-color);
+    border: 1px solid var(--accent3-color);
 }
 
 footer p {
-    color: white;
+    color: var(--accent1-color);
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
