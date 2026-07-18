@@ -15,9 +15,13 @@
     align-items: center;
   }
 
-  hero img, .data, .weather {
+  img, .data, .weather {
     position: static;
   }
+}
+
+.weather h2::after {
+  content: "⛅"
 }
 
 /* Medium screens (500px–999px) */
