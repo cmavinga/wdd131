@@ -1,0 +1,186 @@
+.associatedMediaPanel-G6pPh {
+    padding: calc(var(--spacing12) + var(--spacing8));
+    padding-block-start: var(--spacing10);
+}
+
+.associatedMedia-e48UY {
+    width: 100%;
+    font-size: var(--fontSize14);
+}
+
+.associatedMedia-e48UY img,
+    .associatedMedia-e48UY video {
+        width: 100%;
+        margin: 0;
+        display: block;
+    }
+
+.mediaIcon-FLFR2 {
+    margin-inline-end: var(--spacing16);
+}
+
+.videoDuration-kDpMR {
+    display: block;
+    float: inline-end;
+    margin: calc(var(--spacing16) * -1) var(--spacing16) 0 0;
+    transform: translateY(-100%);
+    padding: 2px 7px;
+    border-radius: 2px;
+    background: var(--background-color-level-current);
+}
+
+.meta-flQu9 {
+    align-items: flex-start;
+    color: var(--textColorSecondary);
+    display: flex;
+    flex: 1 0 100%;
+    font-size: var(--fontSize14);
+    justify-content: space-between;
+    line-height: var(--lineHeight);
+    margin: var(--spacing8) 0;
+}
+
+.linkIcon-kMG3k {
+    color: var(--grey20);
+    color: var(--icon-secondary, var(--grey20));
+}
+
+.linkMedia-hS8qg {
+    width: 100%;
+}
+
+.linkMedia-hS8qg[class]:last-of-type hr {
+        display: block;
+    }
+
+.paragraphMedia-Y9bPV {
+    border-block: 1px solid var(--borderColorTertiary);
+    padding-block: var(--spacing16);
+    margin-block-start: var(--spacing32);
+    margin-block-end: var(--spacing16);
+    margin-inline-end: var(--spacing16);
+}
+
+.paragraphMedia-Y9bPV .heading-gxfln {
+        padding-block: var(--spacing8) var(--spacing16);
+        font-weight: var(--fontWeightBold);
+    }
+
+.paragraphMedia-Y9bPV .content-BmGlM {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing16);
+        cursor: pointer;
+    }
+
+.paragraphMedia-Y9bPV .content-BmGlM .verse {
+            /* we're just showing the first four lines of the content initially */
+            display: -webkit-box;
+            line-clamp: 4;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
+        }
+
+.paragraphMedia-Y9bPV .content-BmGlM.displayAll-hPMlm {
+            cursor: auto;
+            cursor: initial;
+
+            .verse {
+                /* when clicked on we need to show all the content, so we need to undo what we did above. */
+                display: block;
+                line-clamp: initial;
+                -webkit-line-clamp: unset;
+                overflow: visible;
+            }
+        }
+
+.paragraphMedia-Y9bPV .content-BmGlM a:any-link.study-note-ref {
+                /* hide and disable footnotes */
+                color: var(--textColorPrimary);
+                pointer-events: none;
+            }
+
+.creditTooltip-JVd90[class] span {
+        position: static;
+    }
+
+.creditTooltip-JVd90[class] > div {
+        right: 5px;
+        border: 1px solid var(--borderColorTertiary);
+        width: 180px;
+    }
+
+.creditTooltip-JVd90[class] > div aside {
+            font-size: inherit;
+            line-height: inherit;
+            padding: 8px;
+        }
+
+.creditTooltip-JVd90[class] > div div > div::before {
+            border-block-start-color: var(--borderColorTertiary);
+            border-width: 8px;
+            margin-inline-start: -9.4px;
+        }
+
+.creditTooltip-JVd90[class] > div div > div::after {
+            border-block-start-color: var(--background-color-level-current);
+            border-width: 6.85px;
+        }
+
+img.imageWithModal-ILaMF {
+    cursor: zoom-in;
+}
+
+.tooltipContainer-W0ye1 {
+    position: relative;
+}
+
+.tooltipContainer-W0ye1 .callout-EXuDf {
+        background-color: var(--background-color-level-current);
+        border: 1px solid var(--borderColorTertiary);
+        inset-block: auto calc(100% + 11px);
+        color: var(--textColorPrimary);
+        position: absolute;
+        inset-inline-end: -11rem;
+        width: 20rem;
+    }
+
+.tooltipContainer-W0ye1 .callout-EXuDf aside {
+            padding: 14px var(--spacing16);
+            font-size: 13px;
+            line-height: 24px;
+        }
+
+/* Callout arrow css styling */
+
+.tooltipContainer-W0ye1 .callout-EXuDf div > div::before {
+            border-block-start-color: var(--borderColorTertiary);
+        }
+
+.tooltipContainer-W0ye1 .callout-EXuDf div > div::after {
+            border-block-start-color: var(--background-color-level-current);
+        }
+
+.iconButton-ZEJC1 {
+    background-color: transparent;
+    color: var(--accent-color-link);
+    border: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 4;
+}
+
+.message-wWH30 {
+    width: 16rem;
+    display: inline-block;
+}
+
+.closeButton-U0mfE[class] {
+    position: absolute;
+    inset-inline-end: 10px;
+    inset-block-start: var(--spacing16);
+}
+
+
+/*# sourceMappingURL=associated-media-panel.7dec8376fadf43c16558.css.map*/

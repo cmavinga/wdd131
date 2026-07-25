@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazyloading Images</title>
+    <meta name="author" content="Christian Mavinga">
+    <meta name="description" content="Building a small webpage with multiple images stacked vertically on a single page. When testing the page in a browser, the images will load only when they come into view as the user scrolls.">
+    <link rel="stylesheet" href="styles/lazyload.css">
+    <script src="scripts/lazyload.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Lazyloading Images</h1>
+        <div class="gallery">
+            <picture>
+             <img src="images/A1.gif" alt="#" loading="lazy" width="400" height="600">
+            </picture>
+            <picture>
+            <img src="images/A2.gif" alt="#" loading="lazy" width="400" height="600">
+            </picture>
+            <picture>
+            <img src="images/A3.gif" alt="#" loading="lazy" width="400" height="600">
+            </picture>
+            <picture>
+            <img src="images/A4.gif" alt="#" loading="lazy" width="400" height="600">
+            </picture>
+            <picture>
+            <img src="images/A5.gif" alt="#" loading="lazy" width="400" height="600">
+            </picture>
+            <picture>
+            <img src="images/A6.gif" alt="#" loading="lazy" width="400" height="600">
+            </picture>
+        </div>
+    </main>
+    <footer>
+        <p>© <span id="currentyear"></span> | Christian MAVINGA | DR Congo</p>
+        <p id="lastModified"></p>
+    </footer>
+    
+</body>
+</html>

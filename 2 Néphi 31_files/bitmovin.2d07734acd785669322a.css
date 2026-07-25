@@ -1,0 +1,108 @@
+.loadVideoButton-AGBfJ {
+    container-type: inline-size;
+    font-size: var(--fontSize16);
+    width: 100%;
+    padding: var(--spacing20);
+    margin-block-end: var(--spacing32);
+    background-color: var(--panelBackground);
+    border: 1px solid var(--borderColorTertiary);
+    cursor: pointer;
+    overflow: hidden;
+    height: 0;
+    padding-block-start: 56.25%;
+    position: relative;
+}
+
+.loadVideoButton-AGBfJ .innerButton-OEf_w {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+.loadVideoButton-AGBfJ .innerFlex-bI2hp {
+        display: flex;
+        margin: 0 var(--spacing32);
+        color: var(--textColorPrimary);
+    }
+
+.loadVideoButton-AGBfJ .innerFlex-bI2hp .text-pmEAX {
+            text-align: start;
+        }
+
+.loadVideoButton-AGBfJ .innerFlex-bI2hp svg {
+            align-self: flex-start;
+            flex-shrink: 0;
+            margin-inline-end: var(--spacing16);
+        }
+
+.loadVideoButton-AGBfJ .innerFlex-bI2hp .i18nString-WX7_b {
+            color: var(--textColorPrimary);
+            font-weight: var(--fontWeightBold);
+            margin-inline-end: var(--spacing8);
+        }
+
+.loadVideoButton-AGBfJ .innerFlex-bI2hp .title-AWahH {
+            color: var(--accentColorLink);
+            font-style: italic;
+        }
+
+.loadVideoButton-AGBfJ .innerFlex-bI2hp .description-F77a3 {
+            color: var(--textColorPrimary);
+        }
+
+@container (max-width: 400px) {
+
+.loadVideoButton-AGBfJ {
+        .innerFlex-bI2hp {
+            margin: 0 var(--spacing16);
+        }
+}
+    }
+
+.posterFallback-wNf54 {
+    background-color: var(--panelBackground);
+}
+
+.isAssociatedMedia-S5Lx1 {
+    background-color: transparent;
+    background-color: initial;
+    border: none;
+    color: var(--accentColorLink);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.isAssociatedMedia-S5Lx1 .i18nString-WX7_b {
+        color: var(--accentColorLink);
+    }
+
+.isAssociatedMedia-S5Lx1 > svg {
+        margin-inline-end: var(--spacing8);
+    }
+
+.video-vMiKm {
+    width: 100%;
+}
+
+.video-vMiKm img[class] {
+        margin: 0;
+    }
+
+@media print {
+    /* Hide global class "video" as figure or video elementes when printing */
+    figure.video,
+    .video-vMiKm[class],
+    .placeholder-LnS4U,
+    .loadVideoButton-AGBfJ {
+        display: none;
+    }
+}
+
+
+/*# sourceMappingURL=bitmovin.2d07734acd785669322a.css.map*/

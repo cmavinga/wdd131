@@ -1,0 +1,49 @@
+.wrapper-GGVC7 {
+    display: flex;
+    justify-content: flex-end;
+    pointer-events: none;
+    z-index: 1;
+    font-family: var(--sans);
+}
+
+.player-fr7If {
+    padding: var(--spacing10) var(--spacing16);
+    pointer-events: all;
+}
+
+.button-DWtvB[class] {
+    align-self: center;
+    margin-block-end: var(--spacing40);
+    margin-inline-end: var(--spacing40);
+    padding: 0;
+    box-shadow: var(--boxShadowDetached);
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.button-DWtvB.hide-uv_dt[class] {
+        transform: translateY(100px);
+    }
+
+.button-DWtvB[class]:active {
+        outline: none;
+    }
+
+.button-DWtvB[class]:focus {
+        outline-offset: 2px;
+    }
+
+@media (min-width: 80em) {
+        .button-DWtvB.hide-uv_dt[class] {
+            transform: translateY(0);
+        }
+    }
+
+@media print {
+    .wrapper-GGVC7 {
+        display: none;
+    }
+}
+
+
+/*# sourceMappingURL=audio-player.88fba6d348266b3acfda.css.map*/

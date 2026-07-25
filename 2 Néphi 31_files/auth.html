@@ -1,0 +1,23 @@
+
+<!-- saved from url=(0061)https://www.churchofjesuschrist.org/services/platform/v4/auth -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><div style="display:none">
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const loggedinCheck = urlParams.get('loggedin');
+
+    if(loggedinCheck === "false") {
+      window.parent.postMessage({loggedin: false, source: 'signin'}, '*');
+    } else {
+      const url = "https://www.churchofjesuschrist.org/services/platform/v4/sign-in?lang=eng&referer=&format=json";
+      fetch(url, {credentials: 'include', mode: 'cors'})
+        .then(res => (res.ok && !res.headers.anonymous ? res.json() : Promise.reject(res)))
+        .then(res => {
+        if(res.redirect && !loggedinCheck) {
+          window.location.replace(res.redirect);
+        } else {
+          window.parent.postMessage({source: 'signin', ...res}, '*');
+        }
+      })
+    }
+  </script>
+</div></body></html>

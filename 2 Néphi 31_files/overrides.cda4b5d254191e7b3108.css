@@ -1,0 +1,500 @@
+/*  =============================================  */
+/*  ==============  GLOBAL STYLES  ==============  */
+/*  =============================================  */
+html {
+    -webkit-overflow-scrolling: touch;
+    height: 100vh;
+    height: -webkit-fill-available;
+    height: -moz-available;
+    height: stretch;
+}
+@supports (height: -moz-available) {
+html {
+        height: 100vh;
+}
+    }
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow: auto;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    min-height: -moz-available;
+    min-height: stretch;
+    width: 100%;
+    background-color: var(--white);
+    background-color: var(--background-color-level-current, var(--white));
+}
+@supports (height: -moz-available) {
+body {
+        height: 100vh;
+}
+    }
+/******
+    * header footer forces the body to be display block and no one knows if it's still needed
+    * this will force it to be flex and if we don't see any issues, we can request header/footer
+    * to remove the display block rule
+    ******/
+body[class][class][class] {
+        display: flex !important;
+    }
+body.force-scrollbar {
+        scrollbar-color: var(--scrollbar) var(--scrollbar-background);
+        scrollbar-width: 16px;
+    }
+body.force-scrollbar::-webkit-scrollbar {
+            width: 16px;
+        }
+body.force-scrollbar::-webkit-scrollbar-thumb {
+            border: 2.5px solid transparent;
+            border-radius: 12px;
+            background-color: var(--scrollbar);
+            background-clip: content-box;
+        }
+body.force-scrollbar::-webkit-scrollbar-thumb:hover {
+                background-color: var(--scrollbar-hover);
+            }
+body.force-scrollbar::-webkit-scrollbar-track {
+            background-color: var(--scrollbar-background);
+            border: 1px solid var(--scrollbar-border);
+        }
+td,
+th {
+    margin-inline-end: 1em;
+    margin-block-end: 0.62em;
+}
+@layer preIPS {
+    figure {
+        margin: 0;
+    }
+}
+article[data-aid-version] .page-break {
+    height: 0;
+    pointer-events: none;
+}
+article[data-aid-version] .page-break::after {
+        right: auto;
+        right: initial;
+        inset-inline-end: 12px;
+        line-height: 1;
+        position: fixed;
+        transform: translate(8px, -2.3em) rotate(-90deg);
+        transform-origin: bottom right;
+    }
+@media (min-width: 46rem) {
+article[data-aid-version] .page-break::after {
+            inset-inline-end: 22px;
+            transform: translateY(-1.35em);
+    }
+        }
+p article[data-aid-version] .page-break::after {
+            z-index: -1;
+    }
+article[data-aid-version] .active-item::before, article[data-aid-version] .bookmarkHighlight::before {
+        content: "";
+        height: calc(0 + 1rem);
+        height: calc(var(--height, 0) + 1rem);
+        position: absolute;
+        transform: translateY(-0.5rem);
+        border-inline-start: 3px solid var(--accentColorPrimary);
+        inset-inline-start: 1.25rem;
+    }
+@media (min-width: 46em) {
+article[data-aid-version] .active-item::before, article[data-aid-version] .bookmarkHighlight::before {
+            inset-inline-start: 3.25rem;
+    }
+        }
+article[data-aid-version] .bookmarkHighlight::before {
+    border-color: var(--borderColorTertiary);
+}
+article#main aside.alert.warning {
+    font-family: var(--sans);
+    position: relative;
+    box-shadow: var(--boxShadowRaised);
+    border: 1px solid var(--borderColorTertiary);
+    border-radius: 2px;
+    padding: var(--spacing16);
+    margin-bottom: var(--spacing32);
+    background-color: var(--backgroundColorLevel5);
+}
+article#main aside.alert.warning::before {
+        position: absolute;
+        content: "";
+        display: block;
+        width: var(--spacing8);
+        height: calc(100% + 2px);
+        top: -1px;
+        inset-inline-start: -1px;
+        background: var(--accentColorWarning);
+        border-start-start-radius: 2px;
+        border-end-start-radius: 2px;
+    }
+article#main aside.alert.warning svg {
+        position: absolute;
+    }
+article#main aside.alert.warning header {
+        margin-bottom: 0;
+    }
+article#main aside.alert.warning header .title {
+            font-weight: 700;
+            font-size: var(--fontSize18);
+            line-height: var(--lineHeightTight);
+            margin-bottom: var(--spacing16);
+        }
+article#main aside.alert.warning p {
+        font-weight: 400;
+        font-size: var(--fontSize16);
+        line-height: var(--lineHeight);
+        margin-inline-start: var(--spacing32);
+        margin-bottom: var(--spacing16);
+    }
+@media print {
+    /* The rules with "display: block !important;" are to fix a firefox bug where printing breaks on
+    display flex/grid/inline-block https://stackoverflow.com/questions/4609007/firefox-printing-only-1st-page  */
+    body[class][class][class] {
+        display: block !important;
+    }
+
+    #app {
+        display: block !important;
+    }
+
+        #app > div {
+            display: block !important;
+        }
+
+        #app main {
+            display: block !important;
+        }
+
+        #app main > div.reader {
+            display: block !important;
+        }
+
+        #app aside,
+        #app figure {
+            page-break-inside: avoid;
+        }
+            #app [data-aid-version] figure.image,
+            #app [data-aid-version] .no-print,
+            #app [data-aid-version] img {
+                display: none;
+            }
+
+            #app [data-aid-version] figure.diagram {
+                display: block;
+            }
+
+                #app [data-aid-version] figure.diagram img {
+                    display: inline-block;
+                }
+        .print-show-footnotes:not(.print-hide-footnotes--override) #app span sup, .print-show-footnotes--override #app span sup {
+            display: inline;
+        }
+            .print-show-footnotes:not(.print-hide-footnotes--override) #app footer.notes, .print-show-footnotes--override #app footer.notes {
+                display: block;
+            }
+
+                .print-show-footnotes:not(.print-hide-footnotes--override) #app footer.notes li[data-full-marker] p, .print-show-footnotes--override #app footer.notes li[data-full-marker] p {
+                    margin-inline-start: 40px;
+                }
+
+            .print-show-footnotes:not(.print-hide-footnotes--override) #app footer.study-notes, .print-show-footnotes--override #app footer.study-notes {
+                display: block;
+            }
+
+                .print-show-footnotes:not(.print-hide-footnotes--override) #app footer.study-notes li, .print-show-footnotes--override #app footer.study-notes li {
+                    -moz-column-break-inside: auto;
+                         break-inside: auto;
+                    page-break-inside: auto;
+                }
+
+                .print-show-footnotes:not(.print-hide-footnotes--override) #app footer.study-notes li[data-full-marker], .print-show-footnotes--override #app footer.study-notes li[data-full-marker] {
+                    -moz-column-break-inside: avoid;
+                         break-inside: avoid;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    page-break-inside: avoid;
+                }
+
+                    .print-show-footnotes:not(.print-hide-footnotes--override) #app footer.study-notes li[data-full-marker]::before, .print-show-footnotes--override #app footer.study-notes li[data-full-marker]::before {
+                        content: attr(data-full-marker);
+                        flex: 0 0 40px;
+                    }
+        .print-hide-footnotes:not(.print-show-footnotes--override) #app a sup, .print-hide-footnotes--override #app a sup {
+            display: none;
+        }
+
+    #app mark {
+        /* for printing background color, aka highlights */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .print-hide-highlights #app mark {
+        background: none;
+        box-shadow: none;
+    }
+
+    /* Removes Qualtrics button while printing */
+    .QSIFeedbackButton {
+        /* !important is used to overrule all third-party code from Qualtrics */
+        display: none !important;
+    }
+}
+/*  =============================================  */
+/*  ==============  HEADER STYLES  ==============  */
+/*  =============================================  */
+h1,
+body > header > .subtitle {
+    inset-block-start: 0;
+}
+.title-number {
+    inset-block-start: 7px;
+}
+@layer preIPS {
+    h1 {
+        font-family: var(--serif);
+        position: static;
+        position: initial;
+    }
+}
+h1 > .dominant {
+    font-size: var(--fontSize36);
+}
+.searchHighlight {
+    background-color: yellow;
+    outline: 2px solid yellow;
+}
+.theme-dark {
+    .searchHighlight {
+        color: var(--text-color-inverted);
+    }
+}
+@media (prefers-color-scheme: dark) {
+.theme-os {
+        .searchHighlight {
+            color: var(--text-color-inverted);
+        }
+}
+    }
+/*  =============================================  */
+/*  =============  APP LEVEL STYLES  ============  */
+/*  =============================================  */
+.app {
+    min-height: 50vh;
+    margin-block-end: -100px;
+}
+#app {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+}
+#app article[data-aid-version] div.body,
+#cross-link-overlay article[data-aid-version] div.body {
+    --increment: 1;
+
+    color: var(--textColorPrimary);
+    font-weight: var(--fontWeightNormal);
+    margin-inline: 0;
+
+    font-size: var(--fontSize18);
+}
+#app article[data-aid-version] div.body.fontSansSerif, #cross-link-overlay article[data-aid-version] div.body.fontSansSerif {
+        font-family: var(--sans);
+    }
+#app article[data-aid-version] div.body.fontSansSerif header *, #cross-link-overlay article[data-aid-version] div.body.fontSansSerif header * {
+            font-family: var(--sans);
+        }
+#app article[data-aid-version] div.body.fontSansSerif .body-block, #cross-link-overlay article[data-aid-version] div.body.fontSansSerif .body-block {
+            font-family: var(--sans);
+        }
+#app article[data-aid-version] div.body a, #cross-link-overlay article[data-aid-version] div.body a {
+        color: var(--accentColorLink);
+    }
+#app article[data-aid-version] div.body .ActionBar a, #cross-link-overlay article[data-aid-version] div.body .ActionBar a {
+        color: var(--textColorPrimary);
+    }
+#app article[data-aid-version] div.body,
+#cross-link-overlay article[data-aid-version] div.body {
+        .searchHighlight a {
+            color: var(--searchHighlightAnchorColor);
+        }
+}
+@media print {
+    #app article[data-aid-version] div.body,
+    #app #cross-link-overlay article[data-aid-version] div.body {
+        color: var(--black);
+    }
+
+        #app article[data-aid-version] div.body a, #app #cross-link-overlay article[data-aid-version] div.body a {
+            color: var(--accentColorLink);
+        }
+}
+#page {
+    display: contents;
+}
+#portalRoot {
+    z-index: 1400;
+    position: relative;
+}
+.platform-mask-blurred #portalRoot {
+    filter: blur(0);
+}
+.body-block {
+    margin: 0;
+}
+article[data-aid-version] div.body {
+    margin: var(--spacing64) 13.5%;
+}
+/*  =============================================  */
+/*  =============  PLATFORM STYLES  =============  */
+/*  =============================================  */
+/*  ==================  FOOTER  =================  */
+.LDSORGFooter {
+    z-index: 600;
+}
+/*  ==================  GENERAL  =================  */
+a.pf-popup__trigger {
+    color: white;
+}
+platform-header .header-placeholder {
+    min-height: 74px;
+    border-bottom: 1px solid var(--grey5);
+}
+/*  ==============================================  */
+/*  ==============  SPECIFIC STYLES  =============  */
+/*  ==============================================  */
+/*  ============  MANUALS BLOCK QUOTES  ============*/
+[data-aid-version] blockquote > img {
+    float: inline-start;
+    margin-block-end: 15px;
+    margin-inline: 1.6em 20px;
+    padding: 0;
+    width: 86px;
+}
+/*  =============  YOUTH CURRICULUM  =============  */
+article[data-aid-version][data-uri*="/youth/learn/"][data-uri$="/overview"]
+    .body-block {
+    margin: 0;
+}
+/*  =============  _MANIFEST AND _CONTENTS STYLES  =============  */
+article[data-aid-version][data-uri$="_manifest"] header, article[data-aid-version][data-uri$="_contents"] header {
+        margin-block-end: var(--spacing32);
+    }
+article[data-aid-version][data-uri$="_manifest"] header .title, article[data-aid-version][data-uri$="_contents"] header .title {
+            font-family: var(--sans);
+            font-size: var(--fontSize42);
+            color: var(--textColorPrimary);
+        }
+article[data-aid-version][data-uri$="_manifest"] header .subtitle, article[data-aid-version][data-uri$="_contents"] header .subtitle {
+            margin-block: var(--spacing32);
+            font-weight: var(--fontWeightLight);
+            color: var(--textColorPrimary);
+        }
+article[data-aid-version][data-uri$="_manifest"] header .deck, article[data-aid-version][data-uri$="_contents"] header .deck {
+            margin-block: var(--spacing16);
+            color: var(--textColorPrimary);
+        }
+/* formal stylings for scriptures and conference */
+article[data-aid-version][data-uri$="_manifest"][data-uri^="/scriptures"] header .title, article[data-aid-version][data-uri$="_contents"][data-uri^="/scriptures"] header .title, article[data-aid-version][data-uri$="_manifest"][data-uri^="/general-conference"] header .title, article[data-aid-version][data-uri$="_contents"][data-uri^="/general-conference"] header .title {
+            font-family: var(--serif);
+            font-weight: var(--fontWeightNormal);
+        }
+article[data-aid-version][data-uri$="_manifest"][data-uri^="/scriptures"] header .subtitle, article[data-aid-version][data-uri$="_contents"][data-uri^="/scriptures"] header .subtitle, article[data-aid-version][data-uri$="_manifest"][data-uri^="/general-conference"] header .subtitle, article[data-aid-version][data-uri$="_contents"][data-uri^="/general-conference"] header .subtitle {
+            font-family: var(--serif);
+            font-weight: var(--fontWeightNormal);
+        }
+article[data-aid-version][data-uri$="_manifest"] ul, article[data-aid-version][data-uri$="_contents"] ul {
+        margin-inline-start: 0;
+    }
+article[data-aid-version][data-uri$="_manifest"] .label, article[data-aid-version][data-uri$="_contents"] .label {
+        margin: var(--spacing32) 0;
+    }
+article[data-aid-version][data-uri$="_manifest"] .label-tight, article[data-aid-version][data-uri$="_contents"] .label-tight {
+        margin: var(--spacing16) 0;
+    }
+article[data-aid-version][data-uri$="_manifest"] .letter-title, article[data-aid-version][data-uri$="_contents"] .letter-title {
+        font-weight: 700;
+    }
+article[data-aid-version][data-uri$="_manifest"] .primaryMeta,
+    article[data-aid-version][data-uri$="_contents"] .primaryMeta,
+    article[data-aid-version][data-uri$="_manifest"] .secondaryMeta,
+    article[data-aid-version][data-uri$="_contents"] .secondaryMeta {
+        display: inline;
+    }
+/*  =============  THEME OVERIDE STYLES  =============  */
+article[data-aid-version] {
+    --proclamationColor: #5b1400;
+    --familyProclamationColor: #005175;
+}
+@media (prefers-color-scheme: dark) {
+article[data-aid-version] {
+        --proclamationColor: var(--textColorPrimary);
+        --familyProclamationColor: var(--textColorPrimary);
+}
+    }
+article.proclamations[data-aid-version][data-uri="/scriptures/af-poster/1"] h1 .dominant,
+    article.proclamations[data-aid-version][class][class] h1,
+    article.proclamations[data-aid-version] header > .subtitle,
+    article.proclamations[data-aid-version] figure .title,
+    article.proclamations[data-aid-version] .byline p,
+    article.proclamations[data-aid-version] .epigraph {
+        color: var(--proclamationColor);
+    }
+article.proclamations[data-aid-version][data-uri="/scriptures/the-family-a-proclamation-to-the-world/the-family-a-proclamation-to-the-world"]
+        .body
+        > header
+        h1 {
+        color: var(--familyProclamationColor);
+    }
+article.proclamations[data-aid-version][data-uri="/scriptures/af-poster/1"] .body > header,
+    article.proclamations[data-aid-version] header > .subtitle {
+        border-color: var(--borderColorSecondary);
+    }
+/* The `summary` and `details` below are copied from eden because the IPS CSS basically removes all of it so have to reapply it */
+[data-render-instructions="collapsible"] summary {
+    display: block;
+    cursor: pointer;
+    color: var(--accentColorLink);
+    margin-block-end: 0px;
+    transition: margin-block-end 80ms ease-out 0s;
+    width: 100%;
+    list-style: none;
+}
+[data-render-instructions="collapsible"] summary[open] {
+        text-decoration: none;
+        color: var(--textColorPrimary);
+        background: none;
+        margin-block-end: 1.5rem;
+        transition: margin-block-end 80ms ease-in 0s;
+    }
+[data-render-instructions="collapsible"] summary {
+    h2 {
+        all: unset;
+    }
+}
+[data-render-instructions="collapsible"] details {
+    border-block-end: 1px solid #e0e2e2;
+    border-block-end: 1px solid var(--border-color-tertiary, #e0e2e2);
+    padding: 1.5rem;
+    padding-inline-end: 3rem;
+    transition: padding-block-end 80ms ease-out 0s;
+}
+[data-render-instructions="collapsible"] details:not([open]):hover {
+        -webkit-text-decoration: underline 1px solid var(--accentColorLink);
+                text-decoration: underline 1px solid var(--accentColorLink);
+        background: #eff0f0;
+        background: var(--background-color-hover, #eff0f0);
+    }
+[data-render-instructions="collapsible"] summary {
+    /* Don't show the text as selected as we don't let users annotate this */
+    -webkit-user-select: none;
+            user-select: none;
+}
+
+
+/*# sourceMappingURL=overrides.cda4b5d254191e7b3108.css.map*/
