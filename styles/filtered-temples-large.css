@@ -1,0 +1,22 @@
+@media (max-width: 740px) {
+  .menu-toggle {
+    display: block; 
+  }
+  .nav-links {
+    display: none; 
+    flex-direction: column;
+    background: #444;
+    padding: 10px;
+  }
+  .nav-links.show {
+    display: flex; 
+  }
+
+  .text {
+    justify-content: center; 
+  }
+
+  .card-grid {
+    display: block;
+  }
+}

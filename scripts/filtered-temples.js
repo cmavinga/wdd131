@@ -133,11 +133,35 @@ oldLink.addEventListener("click", () => {
     createTempleCard(oldtemple);
 });
 
-const homeLink = document.querySelector("#home")
-homeLink.addEventListener("click", () => {
+const newLink = document.querySelector("#newtemple")
+newLink.addEventListener("click", () => {
+    let newtemple = temples.filter(temple => {
+        const year = parseInt(temple.dedicated.split(",")[0]);
+        return year > 2000;
+    });
 
     document.querySelector(".card-grid").innerHTML = ""; 
-    createTempleCard(temples);
+    createTempleCard(newtemple);
+});
+
+const largeLink = document.querySelector("#largetemple")
+largeLink.addEventListener("click", () => {
+  let largetemple = temples.filter(temple => temple.area > 90000);
+  document.querySelector(".card-grid").innerHTML = ""; 
+  createTempleCard(largetemple);
+})
+
+const smallLink = document.querySelector("#smalltemple");
+smallLink.addEventListener("click", () => {
+  let smalltemple = temples.filter(temple => temple.area < 10000);
+  document.querySelector(".card-grid").innerHTML = ""; 
+  createTempleCard(smalltemple);
+})
+
+const homeLink = document.querySelector("#home")
+homeLink.addEventListener("click", () => {
+  document.querySelector(".card-grid").innerHTML = ""; 
+  createTempleCard(temples);
 });
 
 
