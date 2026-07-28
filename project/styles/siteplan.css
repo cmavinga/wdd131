@@ -18,6 +18,11 @@ header {
     padding: 30px;
 }
 
+main {
+    max-width: 740px;
+    margin: 0 auto;
+}
+
 footer {
     background: var(--secondary-color);
     color: var(--accent1-color);
