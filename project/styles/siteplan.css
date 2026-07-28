@@ -1,0 +1,26 @@
+:root {
+  --primary-color: #003785 ; /* Header Background */
+  --secondary-color: #FF7F11 ; /* Footer background */
+  --accent1-color: #FFFFFF ; /* Text on background */
+  --accent2-color: black; /* Text */
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+    background: var(--primary-color);
+    color: var(--accent1-color);
+    text-align: center;
+    padding: 30px;
+}
+
+footer {
+    background: var(--secondary-color);
+    color: var(--accent1-color);
+    text-align: center;
+    padding: 20px;
+}
