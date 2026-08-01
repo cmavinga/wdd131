@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Form</title>
+    <meta name="author" content="Christian Mavinga | WDD 131">
+    <meta name="description" content="creating a product review form page and applying good form design principles, meeting specific field requirements, and include a submission confirmation with a counter">
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Product Review</h1>
+    </header>
+    <main>
+        <form method="get" action="review.html" class="wf1">   
+            <fieldset>
+                <label>Product Name<br> <!--Break the line with HTML-->
+                    <select id="product" name="product" required>
+                        <option value="" selected disabled>Choose a product</option>
+                        <option value="phone">Smartphone</option>
+                        <option value="laptop">Laptop</option>
+                        <option value="headphone">Headphone</option>
+                        <option value="backpack">Backpack</option>
+                        <option value="bottle">Water Bottle</option>
+                        <option value="sneakers">Sneakers</option>
+                    </select>
+                </label>
+                </fieldset>
+                <fieldset>
+                <label>Overall Rating<br>                                                        
+                    <input type="radio" id="onestar" name="stars" value="1" required><label for="onestar">⭐</label>
+                    <label><input type="radio" id="twostar" name="stars" value="2" required><label for="twostar">⭐⭐</label>
+                    <label><input type="radio" id="threestar" name="stars" value="3" required><label for="threestar">⭐⭐⭐</label>
+                    <label><input type="radio" id="fourstar" name="stars" value="4" required><label for="fourstar">⭐⭐⭐⭐</label>
+                    <label><input type="radio" id="fivestar" name="stars" value="5" required><label for="fivestar">⭐⭐⭐⭐⭐</label>
+                </fieldset>
+                <fieldset>
+                <label>Date of Installation<br><input type="date" name="installationDate" required></label>
+                </fieldset>
+                <fieldset>
+                <label>Which features did you find useful in the product<br>
+                    (check all that apply)<br>
+                <input type="checkbox" name="feature" value="yes">Durability</label>
+                <label><input type="checkbox" name="feature" value="yes">Ease of use</label>
+                <label><input type="checkbox" name="feature" value="yes">Performance</label>
+                <label><input type="checkbox" name="feature" value="yes">Design</label>
+                </fieldset>
+                <fieldset><label>Written Review (Optional)<br><input id="textarea" name="review" optional></label></fieldset>
+                <fieldset><label>Your Name (Optional)<br><input id="text" name="userName" optional></label></fieldset>
+                <input type="submit" value="confirm review">
+        </form>
+    </main>
+    <footer>
+        <p>© <span id="currentyear"></span> | Christian MAVINGA | DR Congo</p>
+        <p id="lastModified"></p>
+    </footer>  
+</body>
+</html>
