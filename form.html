@@ -18,7 +18,7 @@
             <fieldset>
                 <label>Product Name<br> <!--Break the line with HTML-->
                     <select id="product" name="product" required>
-                        <option value="" selected disabled>Choose a product</option>
+                        <option value="" selected disabled>Choose a product &#9662;</option>
                         <option value="phone">Smartphone</option>
                         <option value="laptop">Laptop</option>
                         <option value="headphone">Headphone</option>
@@ -29,12 +29,12 @@
                 </label>
                 </fieldset>
                 <fieldset>
-                <label>Overall Rating<br>                                                        
-                    <input type="radio" id="onestar" name="stars" value="1" required><label for="onestar">⭐</label>
-                    <label><input type="radio" id="twostar" name="stars" value="2" required><label for="twostar">⭐⭐</label>
-                    <label><input type="radio" id="threestar" name="stars" value="3" required><label for="threestar">⭐⭐⭐</label>
-                    <label><input type="radio" id="fourstar" name="stars" value="4" required><label for="fourstar">⭐⭐⭐⭐</label>
-                    <label><input type="radio" id="fivestar" name="stars" value="5" required><label for="fivestar">⭐⭐⭐⭐⭐</label>
+                <legend>Overall Rating</legend>                                                      
+                    <label for="onestar">*<br><input type="radio" id="onestar" name="stars" value="1" required></label>
+                    <label for="twostar">**<br><input type="radio" id="twostar" name="stars" value="2" required></label>
+                    <label for="threestar">***<br><input type="radio" id="threestar" name="stars" value="3" required></label>
+                    <label for="fourstar">****<br><input type="radio" id="fourstar" name="stars" value="4" required></label>
+                    <label for="fivestar">*****<br><input type="radio" id="fivestar" name="stars" value="5" required></label>
                 </fieldset>
                 <fieldset>
                 <label>Date of Installation<br><input type="date" name="installationDate" required></label>
@@ -42,13 +42,13 @@
                 <fieldset>
                 <label>Which features did you find useful in the product<br>
                     (check all that apply)<br>
-                <input type="checkbox" name="feature" value="yes">Durability</label>
-                <label><input type="checkbox" name="feature" value="yes">Ease of use</label>
-                <label><input type="checkbox" name="feature" value="yes">Performance</label>
-                <label><input type="checkbox" name="feature" value="yes">Design</label>
+                <input type="checkbox" name="feature" value="durability">Durability</label>
+                <label><input type="checkbox" name="feature" value="ease">Ease of use</label>
+                <label><input type="checkbox" name="feature" value="performance">Performance</label>
+                <label><input type="checkbox" name="feature" value="design">Design</label>
                 </fieldset>
-                <fieldset><label>Written Review (Optional)<br><input id="textarea" name="review" optional></label></fieldset>
-                <fieldset><label>Your Name (Optional)<br><input id="text" name="userName" optional></label></fieldset>
+                <fieldset><label>Written Review (Optional)<br><textarea id="review" name="review"></textarea></label></fieldset>
+                <fieldset><label>Your Name (Optional)<br><input type="text" id="username" name="userName"></label></fieldset>
                 <input type="submit" value="confirm review">
         </form>
     </main>

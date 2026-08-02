@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 header, main, footer {
     border: 1px solid grey;
     margin: 1rem 0;
@@ -23,12 +27,12 @@ fieldset {
 label {
      display: block;
      padding-top: 0.5rem;
+     margin-bottom: 0.5rem;
 }
 
-.wf1 select,
 .wf1 input[type="date"],
-.wf1 input[id="textarea"],
-.wf1 input[id="text"]
+.wf1 textarea,
+.wf1 input[type="text"]
 {
     display: block;
     border: 1px solid #999;
@@ -42,15 +46,24 @@ label {
 
 .wf1 input[type="radio"],
 .wf1 input[type="checkbox"] {
-    margin-top: 10px;
+    width: auto; 
+    margin-right: 0.5rem;
 }
 
+.wf1 select,
 .wf1 input[type="submit"] {
-    background-image: linear-gradient(#555 #999);
     padding: 0.75rem;
     width: 96%;
     max-width: 400px;
     margin: 2%;
+    appearance: none;
+}
+
+.wf1 input[type="submit"] {
     font-weight: bold;
     box-shadow: 1px 1px 4px #999;
+    background: #0066cc;   
+    color: #fff;   
+    cursor: pointer;
 }
+
