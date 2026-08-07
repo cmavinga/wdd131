@@ -3,8 +3,6 @@ currentYear.textContent = new Date().getFullYear();
 const lastModifiedParagraph = document.getElementById("lastModified");
 lastModifiedParagraph.textContent = "Last Modified: " + document.lastModified;
 
-// const selectProduct = document.getElementById("product")
-
 const products = [
   {
     id: "fc-1888",
@@ -34,20 +32,23 @@ const products = [
 ];
 
 const productSelect = document.getElementById("product");
-
 products.forEach(product => {
   const option = document.createElement("option");
-  option.value = product.id;   
-  option.textContent = product.name; 
+  option.value = product.id;
+  option.textContent = product.name;
   productSelect.appendChild(option);
 });
 
-let reviewCount = localStorage.getItem("reviewCount");
+const form = document.querySelector("form");
+form.addEventListener("submit", () => {
+  let reviewCount = localStorage.getItem("reviewCount");
 
-if (!reviewCount) {
-  reviewCount = 0;
-}
+  if (!reviewCount) {
+    reviewCount = 0;
+  }
 
-reviewCount++;
-localStorage.setItem("reviewCount", reviewCount);
-document.getElementById("counter").textContent = reviewCount;
+  reviewCount++;
+  localStorage.setItem("reviewCount", reviewCount);
+
+  document.getElementById("counter").textContent = reviewCount;
+});
