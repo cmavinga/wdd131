@@ -3,6 +3,7 @@
   --secondary-color: #FF7F11 ; /* Footer background */
   --accent1-color: #FFFFFF ; /* Text on background */
   --accent2-color: black; /* Text */
+  --accent3-color: #eee;
 }
 
 * {
@@ -12,26 +13,97 @@
 }
 
 header {
-    background: var(--primary-color);
-    color: var(--accent1-color);
-    text-align: center;
-    padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary-color);
+  padding: 50px;
 }
 
-main {
-    max-width: 740px;
-    margin: 0 auto;
+.text {
+  color: var(--accent1-color);
+  font-size: 3rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+
+.nav-links a {
+  color: var(--accent1-color);
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.nav-links a:hover {
+  background-color: var(--accent1-color);
+  color: var(--accent2-color);
+  padding: 5px;
+  border-radius: 0.5rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+  background: skyblue;
+}
+
+.gallery figure {
+  position: relative; /* allows caption overlay */
+  margin: 0;
+}
+
+.landscape {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  width: 600px;
+  height: auto;
+}
+
+.portrait {
+  grid-row: 1 / 3;
+  width: 600px;
+  height: 780px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery figcaption {
+  position: absolute;
+  bottom: 0; /* places text at bottom of image */
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  background: rgba(0,0,0,0.5); /* semi-transparent background */
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
+section {
+  background-color: var(--accent3-color);
+  color: var(--accent2-color);
 }
 
 li {
     text-align: center;
     list-style-position: inside;
     padding: 20px;
+    font-size: larger;
 }
 
 footer {
     background: var(--secondary-color);
     color: var(--accent1-color);
+    font-size: 2rem;
     text-align: center;
-    padding: 20px;
+    padding: 50px;
 }

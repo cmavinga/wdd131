@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Review Form</title>
     <meta name="author" content="Christian Mavinga | WDD 131">
-    <meta name="description" content="creating a product review form page and applying good form design principles, meeting specific field requirements, and include a submission confirmation with a counter">
+    <meta name="description" content="Product review form with good design principles, clear field requirements, and a submission confirmation with a counter.">
     <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/form-large.css">
     <script src="scripts/form.js" defer></script>
 </head>
 <body>
@@ -15,42 +16,48 @@
     </header>
     <main>
         <form method="get" action="review.html" class="wf1">   
-            <fieldset>
-                <label>Product Name<br> <!--Break the line with HTML-->
-                    <select id="product" name="product" required>
-                        <option value="" selected disabled>Choose a product &#9662;</option>
-                        <option value="phone">Smartphone</option>
-                        <option value="laptop">Laptop</option>
-                        <option value="headphone">Headphone</option>
-                        <option value="backpack">Backpack</option>
-                        <option value="bottle">Water Bottle</option>
-                        <option value="sneakers">Sneakers</option>
-                    </select>
-                </label>
-                </fieldset>
-                <fieldset>
-                <legend>Overall Rating</legend>                                                      
-                    <label for="onestar">*<br><input type="radio" id="onestar" name="stars" value="1" required></label>
-                    <label for="twostar">**<br><input type="radio" id="twostar" name="stars" value="2" required></label>
-                    <label for="threestar">***<br><input type="radio" id="threestar" name="stars" value="3" required></label>
-                    <label for="fourstar">****<br><input type="radio" id="fourstar" name="stars" value="4" required></label>
-                    <label for="fivestar">*****<br><input type="radio" id="fivestar" name="stars" value="5" required></label>
-                </fieldset>
-                <fieldset>
-                <label>Date of Installation<br><input type="date" name="installationDate" required></label>
-                </fieldset>
-                <fieldset>
-                <label>Which features did you find useful in the product<br>
-                    (check all that apply)<br>
-                <input type="checkbox" name="feature" value="durability">Durability</label>
-                <label><input type="checkbox" name="feature" value="ease">Ease of use</label>
-                <label><input type="checkbox" name="feature" value="performance">Performance</label>
-                <label><input type="checkbox" name="feature" value="design">Design</label>
-                </fieldset>
-                <fieldset><label>Written Review (Optional)<br><textarea id="review" name="review"></textarea></label></fieldset>
-                <fieldset><label>Your Name (Optional)<br><input type="text" id="username" name="userName"></label></fieldset>
-                <input type="submit" value="confirm review">
-        </form>
+    <fieldset>
+        <label for="product">Product Name</label><br>
+        <select id="product" name="product" required>
+            <option value="" selected disabled>Select a Product...</option>
+            <option value="phone">Smartphone</option>
+            <option value="laptop">Laptop</option>
+            <option value="headphone">Headphone</option>
+            <option value="backpack">Backpack</option>
+            <option value="bottle">Water Bottle</option>
+            <option value="sneakers">Sneakers</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Overall Rating</legend>                                                      
+        <label for="onestar">*<br><input type="radio" id="onestar" name="stars" value="1" required></label>
+        <label for="twostar">**<br><input type="radio" id="twostar" name="stars" value="2"></label>
+        <label for="threestar">***<br><input type="radio" id="threestar" name="stars" value="3"></label>
+        <label for="fourstar">****<br><input type="radio" id="fourstar" name="stars" value="4"></label>
+        <label for="fivestar">*****<br><input type="radio" id="fivestar" name="stars" value="5"></label>
+    </fieldset>
+    <fieldset>
+        <label for="installationDate">Date of Installation</label><br>
+        <input type="date" id="installationDate" name="installationDate" required>
+    </fieldset>
+    <fieldset>
+        <legend>Which features did you find useful in the product (check all that apply)</legend>
+        <label for="durability"><input type="checkbox" id="durability" name="feature" value="durability"> Durability</label>
+        <label for="ease"><input type="checkbox" id="ease" name="feature" value="ease"> Ease of use</label>
+        <label for="performance"><input type="checkbox" id="performance" name="feature" value="performance"> Performance</label>
+        <label for="design"><input type="checkbox" id="design" name="feature" value="design"> Design</label>
+    </fieldset>
+    <fieldset>
+        <label for="review">Written Review (Optional)</label><br>
+        <textarea id="review" name="review"></textarea>
+    </fieldset>
+    <fieldset>
+        <label for="username">Your Name (Optional)</label><br>
+        <input type="text" id="username" name="userName">
+    </fieldset>
+    <input type="submit" value="Confirm Review">
+</form>
     </main>
     <footer>
         <p>© <span id="currentyear"></span> | Christian MAVINGA | DR Congo</p>
