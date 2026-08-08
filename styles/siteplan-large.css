@@ -1,0 +1,10 @@
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+  header {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
