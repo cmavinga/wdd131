@@ -1,4 +1,4 @@
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .nav-links {
     flex-direction: column;
     gap: 20px;
@@ -7,4 +7,23 @@
     flex-direction: column;
     padding: 20px;
   }
+  
+  main {
+    flex-direction: column;
+  }
+
+  .gallery {
+    flex-direction: column;
+  }
+
+  section {
+    flex-direction: column;
+  }
+
+  .image-container,
+  .text-container {
+    width: 100%;
+  }
 }
+
+
