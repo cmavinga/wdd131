@@ -87,7 +87,14 @@ for (let i = 1; i < seminaryData.length; i++) {
 // console.log("Lowest Retention:", lowestRetentionSeminary);
 
 function renderTable(dataArray, divId, title) {
-    let tableHTML = `
+  const container = document.getElementById(divId);
+
+    if (!container) {
+      return;
+    }
+        
+
+  let tableHTML = `
     <table>
     <thead>
     <tr>
@@ -101,7 +108,7 @@ function renderTable(dataArray, divId, title) {
     <tbody>
     `;
 
-    for (let item of dataArray) {
+  for (let item of dataArray) {
         tableHTML += `
          <tr>
     <td>${item.name}</td>
@@ -113,19 +120,20 @@ function renderTable(dataArray, divId, title) {
     `;
     }
 
-    tableHTML += `
+  tableHTML += `
     </tbody>
     </table>
     `;
 
-    document.getElementById(divId).innerHTML = tableHTML;
+  container.innerHTML = tableHTML;
 }
 
 renderTable(instituteData, "instituteTable", "Institute");
 renderTable(seminaryData, "seminaryTable", "Seminary");
 
 const resultsDiv = document.getElementById("results");
-resultsDiv.innerHTML = `
+if (resultsDiv) {
+  resultsDiv.innerHTML = `
 <p><strong>Biggest Enrollment (Institute):</strong> ${biggestEnrollmentInstitute.name} with ${biggestEnrollmentInstitute.enrolled} students</p>
 <p><strong>Lowest Enrollment (Institute):</strong> ${lowestEnrollmentInstitute.name} with ${lowestEnrollmentInstitute.enrolled} students</p>
 <p><strong>Highest Retention (Institute):</strong> ${highestRetentionInstitute.name} with ${highestRetentionInstitute.retention} %</p>
@@ -135,6 +143,7 @@ resultsDiv.innerHTML = `
 <p><strong>Highest Retention (Seminary):</strong> ${highestRetentionSeminary.name} with ${highestRetentionSeminary.retention} %</p>
 <p><strong>Lowest Retention (Seminary):</strong> ${lowestRetentionSeminary.name} with ${lowestRetentionSeminary.retention} %</p>
 `;
+}
 
 const saveButton = document.getElementById("saveButton");
 const showButton = document.getElementById("showButton");
@@ -161,5 +170,7 @@ function showInstructors() {
   });
 }
 
-saveButton.addEventListener("click", saveInstructor);
-showButton.addEventListener("click", showInstructors);
+if (saveButton && showButton) {
+  saveButton.addEventListener("click", saveInstructor);
+  showButton.addEventListener("click", showInstructors);
+}
